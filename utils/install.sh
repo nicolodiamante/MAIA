@@ -35,8 +35,7 @@ fi
 
 # User Credentials.
 [[ ! -f "${ENV_VAR}" ]]; then
-  touch "${ENV_VAR}" &&
-cat << EOF >> "${ENV_VAR}"
+cat << EOF > "${ENV_VAR}"
 #
 # Environment variables for ChatGPT Bot.
 #

@@ -1,13 +1,13 @@
 #!/bin/sh
 
-SOURCE=https://github.com/nicolodiamante/jabb
+SOURCE="https://github.com/nicolodiamante/jabb"
 TARBALL="${SOURCE}/tarball/master"
 TARGET="${HOME}/jabb"
-TAR_CMD="tar -xzv -C ${TARGET} --strip-components 1 --exclude '{.gitignore}'"
+TAR_CMD="tar -xzv -C ${TARGET} --strip-components 1 --exclude .gitignore"
 INSTALL=./utils/install.sh
 
 is_executable() {
-  type "$1" > /dev/null 2>&1
+  command -v "$1" > /dev/null 2>&1
 }
 
 # Checks which executable is available then downloads and installs.
