@@ -150,7 +150,11 @@ source install.sh
 
 **MAIA Configuration**:
 
-To run the script, ensure that Node.js is installed on your system. If Node isn't found, the script attempts to install it using [Homebrew][Homebrew]. If Homebrew isn't detected either, the script will first install Homebrew and then proceed to install [Node.js][nodejs]. Once Node.js is installed successfully, the script will set up and install the required dependencies: [discord.js][discord.js], [dotenv][dotenv], [openai][openai], and [nodemon][nodemon] using [npm][npm]. This process also generates the `.env` file which you'll use to set configuration values.
+Before initiating the script, confirm that your system has Node.js installed. If the script doesn't detect Node.js, it will attempt to install it via [Homebrew][Homebrew]. In the absence of Homebrew, the script will install Homebrew first and then proceed with the [Node.js][nodejs] installation, followed by [tmux][tmux-github].
+
+Once Node.js is up and running, the script will automatically handle the installation of the necessary dependencies which include [discord.js][discord.js], [dotenv][dotenv], [openai][openai], and [nodemon][nodemon] using [npm][npm], the Node.js package manager.
+
+During this setup, a `.env` file is created. This file is crucial as it is where you will enter your configuration settings.
 
 ```shell
 # Discord Settings
@@ -278,7 +282,11 @@ maia -a
 
 ### Starting and Stopping Session
 
-MAIA operates through an intelligent background assistant optimized for user interactions on Discord. There may be occasions when you'd prefer to halt this session temporarily or restart it once it has been paused. MAIA incorporates straightforward commands for these tasks:
+MAIA is designed to function as a smart assistant within the background of your computing environment. Tmux enhances MAIA's operability by allowing it to run independently in the background. This means you can start MAIA, detach from the tmux session, and continue using your terminal for other tasks while MAIA remains active.
+
+There may be instances where you need to pause MAIA's activity—perhaps for maintenance, updates, or simply to temporarily free up system resources. To manage this, MAIA includes simple-to-use commands that enable you to suspend its session and then, when you're ready, resume operation without having to restart the entire program.
+
+In short, tmux is what gives MAIA the ability to work discreetly and persistently, ensuring your Discord interactions are managed efficiently without monopolising your terminal's workspace.
 
 To start or re-attach to the session:
 
@@ -373,6 +381,7 @@ Thank you for considering the use of this chatbot. Your feedback on improving MA
 [openai-API]: https://beta.openai.com/account/api-keys
 [Homebrew]: https://brew.sh
 [nodejs]: https://nodejs.org/en
+[tmux-github]: https://github.com/tmux/tmux/wiki
 [npm]: https://docs.npmjs.com
 [discord.js]: https://discord.js.org
 [dotenv]: https://www.npmjs.com/package/dotenv
