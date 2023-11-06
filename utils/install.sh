@@ -1,13 +1,12 @@
 #!/bin/sh
 
 #
-# Install Jabb dependencies
+# Install MAIA dependencies.
 #
 
 # Defines the PATHs.
-ROOT=$(dirname "$0")
-TARGET="${ROOT}/jabb"
-ENV_VAR=".env"
+TARGET="${HOME}/MAIA"
+ENV_VAR="${TARGET}/.env"
 
 # Check for Homebrew, if not found then install.
 echo 'Checking for Homebrew...'
@@ -24,6 +23,12 @@ if ! command -v node &> /dev/null; then
   brew install node
 fi
 
+# Check for Tmux, if not found then install.
+if ! command -v tmux &> /dev/null; then
+  echo 'Tmux is missing! Installing it...'
+  brew install tmux
+fi
+
 # Install dependencies via npm.
 if ! command -v npm &> /dev/null; then
   echo 'npm is missing! Installing npm and dependencies...'
@@ -37,24 +42,26 @@ fi
 [[ ! -f "${ENV_VAR}" ]]; then
 cat << EOF > "${ENV_VAR}"
 #
-# Environment variables for ChatGPT Bot.
+# Configuration for MAIA - Discord Chatbot.
 #
 
-# Discord
-DISCORD_TOKEN=
-DISCORD_CHANNEL_ID=
+# Discord Settings
+DISCORD_TOKEN=                    # Bot authentication token
+DISCORD_CHANNEL_ID=               # Optional: Restrict bot to this channel
 
-# OpenAI
-OPENAI_ORG=
-OPENAI_API_KEY=
+# OpenAI Configuration
+OPENAI_ORG=                       # OpenAI organization ID
+OPENAI_API_KEY=                   # API key for OpenAI
 
-# ChatGPT
-CHATGPT_MODEL=gpt-4
-CHATGPT_TEMP=0.86
-CHATGPT_TOP_P=1
-CHATGPT_MAX_TOKENS=512
-CHATGPT_PROMPT=CHATGPT_PROMPT
+# ChatGPT Configuration
+CHATGPT_MODEL=gpt-4               # Model to use for responses
+CHATGPT_TEMP=0.86                 # Controls response randomness
+CHATGPT_TOP_P=1                   # Controls response diversity
+CHATGPT_MAX_TOKENS=512            # Limits response length
+
+# Chat Log Configuration
+CHAT_LOG=0                        # Set to 1 to enable chat logging
 EOF
 else
-  echo 'jabb: .env file already exists.'
+  echo 'MAIA: .env file already exists.'
 fi

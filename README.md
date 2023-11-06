@@ -1,75 +1,82 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/jabb/assets/48920263/934417bb-1ab4-4acb-9726-d5e4c38e8b9f" draggable="false" ondragstart="return false;" alt="Jabb" title="Jabb" />
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/0c4de04c-61d0-4bb9-ba60-6079c2784513" draggable="false" ondragstart="return false; "alt="Jabb" title="Jabb" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/MAIA/assets/48920263/cb022e08-697d-4d74-8709-e772cbbd1828" draggable="false" ondragstart="return false;" alt="MAIA" title="MAIA" />
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/96be6946-3dec-47cb-9436-3a965bb53737" draggable="false" ondragstart="return false; "alt="MAIA" title="MAIA" />
   </picture>
 </p>
 
-[Discord][discord], a renowned digital platform, has seen massive use in recent years as it combines text, voice, and video communication, bringing people together over common interests. One of its pivotal features is the ability to integrate AI chatbots like [ChatGPT][chaGPT], which can remarkably enhance user experience. Among these, Jabb is a bot that embeds the power of ChatGPT, ensuring friendliness and utility at its best. The bot not only enlivens your Discord server but also keeps it informed and entertained, ultimately serving as a powerful tool to boost user engagement in your channel. In essence, jabb serves as a valuable tool for those seeking to leverage AI technology within their Discord communities.
+[Discord][discord], a renowned digital platform, has seen massive use in recent years as it combines text, voice, and video communication, bringing people together over common interests. One of its pivotal features is the ability to integrate AI chatbots like [ChatGPT][chaGPT], which can remarkably enhance user experience. Among these, MAIA (Messaging Artificial Intelligent Assistant) is a bot that embeds the power of ChatGPT, ensuring friendliness and utility at its best. The bot not only enlivens your Discord server but also keeps it informed and entertained, ultimately serving as a powerful tool to boost user engagement in your channel. In essence, MAIA serves as a valuable tool for those seeking to leverage AI technology within their Discord communities.
 
 <br><br>
 
 <p align="center">
   <picture>
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/f3b0b679-3f99-4dd2-83e8-254419cdb5a8" draggable="false" ondragstart="return false; "alt="OpenAI + Discord" title="OpenAI + Discord" width="700px" />
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/8b5ac9d3-6fcd-42f5-bb4e-66f0e9b0211f" draggable="false" ondragstart="return false; "alt="OpenAI + Discord" title="OpenAI + Discord" width="700px" />
   </picture>
 </p>
 
 <br><br>
 
-## Requirements to get Jabb to work within Discord Server
+## Requirements to get MAIA to work within Discord Server
 
 ### Create the bot
 
-It's time to construct our Discord bot. To start, visit the [Discord Developers Applications][discord-dev] page. If you're not logged in yet, make sure to sign in. You'll see an option labeled "Create Application" on the right side of the page, click on it, then assign a name to your application. You are free to use any name you like. For example, I'll name mine "Jabb".
+It's time to construct our Discord bot. To start, visit the [Discord Developers Applications][discord-dev] page. If you're not logged in yet, make sure to sign in. You'll see an option labelled "Create Application" on the right side of the page, click on it, then assign a name to your application. You are free to use any name you like. For example, I'll name mine "MAIA".
 
 <br><br>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/jabb/assets/48920263/c2af2194-fe58-4d50-9f37-be5840d94f98" draggable="false" ondragstart="return false;" alt="jabb Deployed" title="jabb Deployed" />
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/e5e5dd51-eda1-4918-a59f-f983a1546a47" draggable="false" ondragstart="return false; "alt="jabb Deployed" title="jabb Deployed" width="750px" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/MAIA/assets/48920263/16a4056f-c8f2-41c9-8a82-70163c0c6249" draggable="false" ondragstart="return false;" alt="Create An Application" title="Create An Application" />
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/9f9e8d39-a516-4ebe-b1db-ba4dbe32639d" draggable="false" ondragstart="return false; "alt="Create An Application" title="Create An Application" width="750px" />
   </picture>
 </p>
 
 <br><br>
 
-Begin by assigning an avatar to your application. Afterward, proceed to the "bot" section located on the left-hand side of your screen and click "Create Bot". Once your bot has been created, adjust the following settings according to your preferences:
+Begin by assigning an avatar to your application. Afterwards, proceed to the "bot" section located on the left-hand side of your screen and click "Create Bot". Once your bot has been created, adjust the following settings according to your preferences:
 
 1. Deactivate the "Public Bot" setting if you wish to prevent others from inviting your bot.
 
-   - [ ] Public Bot
+   <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/14d6b9b2-8548-4ea7-963d-44d46cae7c01" draggable="false" ondragstart="return false;" alt="Toggle Off" title="Toggle Off" width="20px" />&nbsp;&nbsp;Public Bot
+   <br>
 
 2. Activate all the "Intense Settings":
 
-   - [x] Presence Intent
-   - [x] Server Member Intent
-   - [x] Message Content Intent
+   <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/d6352a5e-5590-419c-a2dc-2292d3a15aab" draggable="false" ondragstart="return false;" alt="Toggle On" title="Toggle On" width="20px" />&nbsp;&nbsp;Presence Intent
+
+   <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/d6352a5e-5590-419c-a2dc-2292d3a15aab" draggable="false" ondragstart="return false;" alt="Toggle On" title="Toggle On" width="20px" />&nbsp;&nbsp;Server Member Intent
+
+   <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/d6352a5e-5590-419c-a2dc-2292d3a15aab" draggable="false" ondragstart="return false;" alt="Toggle On" title="Toggle On" width="20px" />&nbsp;&nbsp;Message Content Intent
+   <br>
 
 3. Select OAuth2, which is on your screen's left, and choose "↳ URL Generator" to create an invitation link for your Discord bot. Within the scope section, select:
 
-   - [x] Bot
-   - [x] Application.commands (If you plan to include `/` commands)
+   <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/311c17f2-9a5f-4f02-b31a-811157bc69b6" draggable="false" ondragstart="return false;" alt="Check Mark" title="Check Mark" width="20px" />&nbsp;&nbsp;Bot
 
-   Proceed by navigating to the bot permissions section and select:
+   <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/311c17f2-9a5f-4f02-b31a-811157bc69b6" draggable="false" ondragstart="return false;" alt="Check Mark" title="Check Mark" width="20px" />&nbsp;&nbsp;Application.commands (If you plan to include `/` commands)
+   <br>
 
-   - [x] Send messages
+   Proceed by navigating to the bot permissions section below and select:
 
-   Continue with the addition of the bot to your server, using the same procedure as for any other bot. Upon activation of this setting, scroll down the page and copy the generated URL. Ultimately, visit your Discord server and paste the link. Once pasted, click on the link to summon the bot to your server.
+   <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/311c17f2-9a5f-4f02-b31a-811157bc69b6" draggable="false" ondragstart="return false;" alt="Check Mark" title="Check Mark" width="20px" />&nbsp;&nbsp;Send messages
+   <br>
+
+   To add the bot to your server, follow the standard procedure as with other bots. After enabling this setting, scroll down to find the generated URL. Copy this URL, then go to your Discord server. Paste the link into the chat and send it. Click the sent link to invite the bot to your server.
 
 <p align="center">
   <picture>
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/651e21c8-d174-42db-b4e6-c38227981475" draggable="false" ondragstart="return false;" alt="Paste your API keys" title="Paste your API keys" width="750px" />
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/d2f1dc78-1b88-4ab6-8130-e99c35674dfb" draggable="false" ondragstart="return false;" alt="Discord URL" title="Discord URL" width="750px" />
   </picture>
 </p>
 
-4. Lastly, ensure to safeguard our bot token by clicking on "Bot", located on the left side of your screen, and choosing "Reset Token". A long string appears under the bot's username. Ensure you have copied it. Once you've copied the key, you will not have access to it again - if you lose the key, you'll have to reset the token.
+4. Lastly, to obtain the bot token, click on "Bot" on the left side of your screen and select "Reset Token". This will produce a long string beneath the bot's username. Ensure you copy it. Once you navigate away, this key won't be accessible again. If lost, you'll have to reset the token.
 
 <br><br>
 
 <p align="center">
   <picture>
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/3d66fa06-5cf3-4a1c-892f-9153dfa74697" draggable="false" ondragstart="return false;" alt="Discord Chat" title="Discord Chat" width="750px" />
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/2c6413e5-299d-4b82-958b-04af59d06c31" draggable="false" ondragstart="return false;" alt="Discord App Token" title="Discord App Token" width="750px" />
   </picture>
 </p>
 
@@ -81,26 +88,26 @@ Begin by assigning an avatar to your application. Afterward, proceed to the "bot
 
 <p align="center">
   <picture>
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/a0a7ca36-cc09-40b8-b76a-35aafcf17ce7" draggable="false" ondragstart="return false;" alt="Paste your API keys" title="Paste your API keys" width="800px" />
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/75907a77-f923-462c-8111-caec1d38be2c" draggable="false" ondragstart="return false;" alt="MAIA On Discord" title="MAIA On Discord" width="800px" />
   </picture>
 </p>
 
 <br><br>
 
-With the bot now created and added to your Discord server, the next steps are straightforward, but they do involve some specific links and prerequisites for seamless operation. It's time to gather all necessary keys. We've already created the Discord token; now it's time to create your OpenAI API Key, if you don't already have one. This key is important for integrating ChatGPT with Discord.
+With the bot now created and added to your Discord server, the next steps are straightforward, but they do involve some specific links and prerequisites for seamless operation. It's time to gather all the necessary keys. We've already created the Discord token; now it's time to create your OpenAI API Key if you don't already have one. This key is important for integrating ChatGPT with Discord.
 
 <br>
 
 ### Create your OpenAI API Key
 
-To use Jab's services in Discord, obtaining an OpenAI API key is critical. This key can be generated from your existing OpenAI account; if you don't have an OpenAI account, easily create one by visiting this [link][openai-signup]. This secret key is essential for authentication verification. Below is a detailed guide on acquiring the key:
+To use MAIA's services in Discord, obtaining an OpenAI API key is critical. This key can be generated from your existing OpenAI account; if you don't have an OpenAI account, easily create one by visiting this [link][openai-signup]. This secret key is essential for authentication verification. Below is a detailed guide on acquiring the key:
 
 1. Log in to your [OpenAI account][openai-account].
 2. Search for the "Create new secret key" option and click on it.
 
 <p align="center">
   <picture>
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/74ea4a10-ba95-4f00-8563-5c814bc172e5" draggable="false" ondragstart="return false; "alt="Create new secret key" title="Create new secret key" width="750px" />
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/5172aa7d-7aab-4f1c-8eb2-0f68384b314f" draggable="false" ondragstart="return false; "alt="OpenAI new secret key" title="OpenAI new secret key" width="750px" />
   </picture>
 </p>
 
@@ -109,87 +116,205 @@ After acquiring the [API Key][openai-API], integrating ChatGPT's services into D
 
 <p align="center">
   <picture>
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/9f39d552-eae7-43e1-b297-7255356e801e" draggable="false" ondragstart="return false; "alt="OpenAI API Key" title="OpenAI API Key" width="750px" />
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/fa94413d-c65d-478d-94e8-af3beb11c8a9" draggable="false" ondragstart="return false; "alt="OpenAI API Key" title="OpenAI API Key" width="750px" />
   </picture>
 </p>
 
 <br><br>
 
-## Setting Up Jabb
+## Getting Started
 
-Now you've created the application and gathered all the necessary keys to operate the bot. You need to download the repository via curl using the following shell command:
+Now you've created the application and gathered all the necessary keys to operate the bot. You need to download the repository. Here are the two methods you can choose from:
 
-```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/nicolodiamante/jabb/HEAD/bootstrap.sh)"
-```
-
-Alternatively, you can manually clone the repository with this command:
+**Automatic Download via `curl`**: Simply execute the following command in your terminal to quickly download and seamlessly install the utility:
 
 ```shell
-git clone https://github.com/nicolodiamante/jabb.git ~/jabb
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/nicolodiamante/MAIA/HEAD/bootstrap.sh)"
 ```
 
-Once the repository is cloned or downloaded, navigate to the directory and launch the installation script:
+**Manual Cloning**: For those who prefer a hands-on approach, you can manually clone the repository to your desired location:
+
+```shell
+git clone https://github.com/nicolodiamante/MAIA.git ~/MAIA
+```
+
+<br>
+
+### Post-Download Steps
+
+**Directory Navigation & Script Execution**: Navigate to the repository's `utils` directory and execute the installation script:
 
 ```shell
 source install.sh
 ```
 
-The role of this script is to ensure Node is installed on your computer. If Node isn't found, the script attempts to install it using [Homebrew][Homebrew]. If Homebrew also isn't detected, the script installs Homebrew before proceeding to install [Node.js][nodejs]. Post successful Node installation, the script sets up and installs the required dependencies - [discord.js][discord.js], [dotenv][dotenv], [openai][openai], and [nodemon][nodemon] - using [npm][npm]. This process also creates the .env file. Upon successful installation of these dependencies, you can start modifying and adding your keys to the .env file.
+**MAIA Configuration**:
+
+To run the script, ensure that Node.js is installed on your system. If Node isn't found, the script attempts to install it using [Homebrew][Homebrew]. If Homebrew isn't detected either, the script will first install Homebrew and then proceed to install [Node.js][nodejs]. Once Node.js is installed successfully, the script will set up and install the required dependencies: [discord.js][discord.js], [dotenv][dotenv], [openai][openai], and [nodemon][nodemon] using [npm][npm]. This process also generates the `.env` file which you'll use to set configuration values.
 
 ```shell
-# Discord
+# Discord Settings
 DISCORD_TOKEN=
 DISCORD_CHANNEL_ID=
+```
 
-# OpenAI
+Start by entering the Discord token you acquired earlier. If you want MAIA to operate in a specific channel, provide the `DISCORD_CHANNEL_ID`. Leaving it blank means MAIA can respond in any channel on the server.
+
+```shell
+# OpenAI Configuration
 OPENAI_ORG=
 OPENAI_API_KEY=
 ```
 
-Start by inputting the Discord token you've already acquired. Second, although optional, it's recommended to set the Discord channel ID to limit channel usage. When `DISCORD_CHANNEL_ID` is set, the bot will operate solely in the defined channel. If it's left undefined, the bot can function across all channels.
+Input the required values for OpenAI settings. This allows MAIA to communicate with OpenAI and generate responses.
 
-To restrict the bot to a specific channel, obtain the ID of that channel by:
+```shell
+# Chat Log Configuration
+CHAT_LOG=0
+```
 
-1. Right-clicking on the desired channel.
-2. Choosing the "Copy ID" option.
+The `CHAT_LOG` configuration determines whether MAIA will log the chats. Enabling this can be useful for debugging or monitoring purposes. By default, it's set to '0', which means logging is disabled.
 
-This gives you the ID that confines the bot to the chosen channel.
+<br>
 
-Next, fill in the `OPENAI_ORG`. To locate your OpenAI organization number, visit [OpenAI Organization settings][org-settings] and copy the Organization ID. Lastly, add the previously collected OpenAI API Key.
+### How to Find a Discord Channel's ID
+
+**1. Enable Discord Developer Mode**
+
+Before you can obtain a Discord channel's ID, the Developer Mode needs to be activated. If you're a Discord bot developer, you might have already turned this on. If not, here's how to do it:
+
+- Launch Discord and find the settings icon, represented by a cogwheel, at the bottom left of the screen. It's near your avatar and username.
+
+  <p align="center">
+  <picture>
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/1ddc3402-2959-417f-906d-43243cdd7412" draggable="false" ondragstart="return false; "alt="Discord Settings Icon" title="Discord Settings Icon" width="750px" />
+  </picture>
+  </p>
+
+- Click on the icon to open the User Settings.
+- In the left sidebar, select "Advanced" to access the Advanced Settings.
+- In the Advanced Settings, look for the Discord Developer Mode toggle. A green checkmark means it's already enabled. If not, click to turn it on.
+
+<br>
+
+**2. Find and Copy the Channel ID**
+
+- With Developer Mode on, you're set to obtain the channel's ID.
+- Locate and select the channel whose ID you want to retrieve.
+- On a desktop, right-click the channel name. A menu will pop up with a "Copy ID" option. Selecting this will copy the channel's ID to your clipboard. Refer to the screenshot below for clarity.
+
+- On mobile, press and hold the channel name until a menu surfaces. From this menu, choose "Copy ID" to copy the channel ID.
 
 <br><br>
 
-## Deploy Jabb in your Discord server
+<p align="center">
+<picture>
+  <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/7d185acd-3866-46e0-84ea-fdee59169cfc" draggable="false" ondragstart="return false; "alt="Copy Discord Channel ID" title="Copy Discord Channel ID" width="750px" />
+</picture>
+</p>
 
-Once you've set up the bot and keyed in your access details, follow these steps to deploy it, open the terminal, navigate to the Jabb directory, and initiate the bot. You can do this by executing the following command:
+<br><br>
+
+With the ID copied, you can use it as needed, like let MAIA know exactly which channel to operate in.
+
+<br>
+
+### Input Your OpenAI Keys
+
+1. **Identify the Organization ID**
+
+- Go to [OpenAI Organization settings][org-settings].
+- Locate and copy your OpenAI Organization ID.
+
+<br>
+
+2. **Update .env File**
+
+- In your `.env` file, locate the `OPENAI_ORG` field.
+- Paste the copied Organization ID.
+- Ensure you've also added the `OPENAI_API_KEY` you previously obtained.
+
+By following these steps, your `.env` file will be correctly configured with OpenAI's details.
+
+<br><br>
+
+## Deploy MAIA in your Discord server
+
+Once you've set up the bot and keyed in your access details, follow these steps to deploy it, open the terminal, navigate to the MAIA directory, and initiate the bot. You can do this by executing the following command:
 
 ```shell
-nodemon index.js
+maia -s
 ```
-
-If everything was set up correctly, a message stating "Jabb is now online on Discord!" will appear. This message signifies that your bot is online and ready to operate in your Discord server.
 
 <br><br>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/jabb/assets/48920263/8cbde783-fcf4-462c-96f9-f8134d633701" draggable="false" ondragstart="return false;" alt="jabb Deployed" title="jabb Deployed" />
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/a10ba20b-8698-4219-b6d0-9c44c830e6c5" draggable="false" ondragstart="return false; "alt="jabb Deployed" title="jabb Deployed" width="650px" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/MAIA/assets/48920263/94e9fb78-e440-4334-a579-1b875f68a1d1" draggable="false" ondragstart="return false;" alt="MAIA Start" title="MAIA Start" />
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/0d99bbd2-2944-4ff0-887a-3f6f268eca2f" draggable="false" ondragstart="return false; "alt="MAIA Start" title="MAIA Start" width="650px" />
   </picture>
 </p>
 
 <br><br>
 
-## Conclusion
+If you have set everything up correctly, you'll see the message: "MAIA session started and detached!" This indicates that a new session named "maia_session" has started on tmux, and your bot is now online, ready to function on your Discord server. To view the active tmux sessions, execute the command below:
 
-Through the integration of AI chatbots like Jabb, the user experience on Discord can be significantly improved. Jabb, powered by ChatGPT's innovative capabilities, injects vibrancy into your Discord server by delivering valuable and entertaining content to users. These highly sophisticated and appealing AI bots have the potential to boost user interaction and engagement within your Discord communities. By harnessing the power of AI technology through bots like Jabb, you can cultivate a lively, knowledgeable, and captivating atmosphere for all server members.
+```shell
+maia -a
+```
 
 <br><br>
 
 <p align="center">
   <picture>
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/b432dc05-6080-4918-8b43-5288b5870921" draggable="false" ondragstart="return false;" alt="Discord Chat" title="Discord Chat" width="1000px" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/MAIA/assets/48920263/7e1e9c68-420e-4dee-8007-030595e4333d" draggable="false" ondragstart="return false;" alt="MAIA Deployed" title="MAIA Deployed" />
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/18455a43-d681-420f-875f-85201dc0b1b6" draggable="false" ondragstart="return false; "alt="MAIA Deployed" title="MAIA Deployed" width="650px" />
+  </picture>
+</p>
+
+<br><br>
+
+## How to use MAIA
+
+### Starting and Stopping Session
+
+MAIA operates through an intelligent background assistant optimized for user interactions on Discord. There may be occasions when you'd prefer to halt this session temporarily or restart it once it has been paused. MAIA incorporates straightforward commands for these tasks:
+
+To start or re-attach to the session:
+
+```shell
+maia -s
+```
+
+To terminate the session:
+
+```shell
+maia -k
+```
+
+These commands offer you complete autonomy over MAIA's functionality on your system.
+
+### Checking MAIA Session's Status
+
+Post initiation or termination of the MAIA session, it's recommended to verify its status, ensuring its desired operational state:
+
+```shell
+maia -r
+```
+
+Upon successful execution, a corresponding message will display, showcasing the MAIA session's active or inactive status.
+
+<br><br>
+
+## Conclusion
+
+Through the integration of AI chatbots like MAIA, the user experience on Discord can be significantly improved. MAIA, powered by ChatGPT's innovative capabilities, injects vibrancy into your Discord server by delivering valuable and entertaining content to users. These highly sophisticated and appealing AI bots have the potential to boost user interaction and engagement within your Discord communities. By harnessing the power of AI technology through bots like MAIA, you can cultivate a lively, knowledgeable, and captivating atmosphere for all server members.
+
+<br><br>
+
+<p align="center">
+  <picture>
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/01ffb56f-2ff6-4828-91bc-cdd009deca22" draggable="false" ondragstart="return false;" alt="MAIA Discord Chat" title="MAIA Discord Chat" width="1000px" />
   </picture>
 </p>
 
@@ -218,25 +343,25 @@ Through the integration of AI chatbots like Jabb, the user experience on Discord
 
 ### Contribution
 
-Thank you for considering the use of this chatbot. Your feedback in improving Jabb would be much appreciated. In case you run into any issues or bugs, please report them on the [issues page][issues].
+Thank you for considering the use of this chatbot. Your feedback on improving MAIA would be much appreciated. In case you run into any issues or bugs, please report them on the [issues page][issues].
 <br><br>
 
 <p align="center">
   <picture>
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/fd955a8a-a4c7-495a-93b3-72848a271e6c" draggable="false" ondragstart="return false;" /></>
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/fd955a8a-a4c7-495a-93b3-72848a271e6c" draggable="false" ondragstart="return false;" /></>
   </picture>
 </p>
 
 <p align="center">
   <picture>
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/4c20aa4f-77ea-46ca-a629-9a9b67b055e8" draggable="false" ondragstart="return false;" alt="Nicol&#242; Diamante" title="Nicol&#242; Diamante" width="17px" />
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/4c20aa4f-77ea-46ca-a629-9a9b67b055e8" draggable="false" ondragstart="return false;" alt="Nicol&#242; Diamante" title="Nicol&#242; Diamante" width="17px" />
   </picture>
 </p>
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/jabb/assets/48920263/5c5c50be-7407-4d97-9b09-81dd6aecbe10" draggable="false" ondragstart="return false;" alt="MIT License" title="MIT License" />
-    <img src="https://github.com/nicolodiamante/jabb/assets/48920263/d9e5cbc8-b8a1-4ee9-a117-1454ecf370ac" draggable="false" ondragstart="return false; "alt="MIT License" title="MIT License" width="95px" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/nicolodiamante/MAIA/assets/48920263/5c5c50be-7407-4d97-9b09-81dd6aecbe10" draggable="false" ondragstart="return false;" alt="MIT License" title="MIT License" />
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/d9e5cbc8-b8a1-4ee9-a117-1454ecf370ac" draggable="false" ondragstart="return false; "alt="MIT License" title="MIT License" width="95px" />
   </picture>
 </p>
 

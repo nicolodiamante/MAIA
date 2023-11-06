@@ -1,0 +1,81 @@
+#
+# MAIA: Messaging Artificial Intelligent Assistant.
+# By Nicolò Diamante <hello@nicolodiamante.com>
+# https://github.com/nicolodiamante/MAIA
+# MIT License
+#
+
+# Launch MAIA.
+maia() {
+  # Defines the PATHs.
+  local MAIA="${HOME}/MAIA"
+
+  # Start MAIA Session.
+  if [[ "$1" == "-s" || "$1" == "--start" ]]; then
+    # Check if tmux is installed.
+    if ! command -v tmux &> /dev/null; then
+      echo "Error: tmux is not installed. Please install tmux to use MAIA."
+      return 1
+    else
+      # Check if the session exists.
+      if tmux has-session -t maia_session &> /dev/null; then
+        echo "Re-attaching to existing MAIA session..."
+        tmux attach-session -t maia_session
+      else
+        # Check if the directory exists.
+        if [[ ! -d "$MAIA" ]]; then
+          echo "Error: Directory '$MAIA' does not exist!"
+          return 1
+        fi
+
+        # Start a new session for MAIA.
+        tmux new-session -s maia_session -d "cd '$MAIA' && nodemon index.js"
+        if [[ $? -eq 0 ]]; then
+          tmux detach-client -s maia_session
+          echo "MAIA session started and detached!"
+        else
+          echo "Error: Failed to start MAIA session."
+          return 1
+        fi
+      fi
+    fi
+  elif [[ "$1" == "-r" || "$1" == "--running" ]]; then
+    # Check if the sessions exist.
+    if tmux has-session -t maia_session &> /dev/null; then
+      echo "MAIA session running!"
+    else
+      echo "MAIA session not running!"
+    fi
+  elif [[ "$1" == "-a" || "$1" == "--attach" ]]; then
+    # Check if the sessions exist then attach to it.
+    if tmux has-session -t maia_session &> /dev/null; then
+      echo "Attaching to MAIA session..."
+      tmux attach-session -t maia_session
+    else
+      echo "MAIA session not running!"
+    fi
+  elif [[ "$1" == "-k" || "$1" == "--kill" ]]; then
+    # Check if the sessions exist then kill it.
+    if tmux has-session -t maia_session &> /dev/null; then
+      tmux kill-session -t maia_session
+      echo "MAIA session killed!"
+    else
+      echo "MAIA session not running!"
+    fi
+  elif [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    echo "Usage: maia [OPTION]"
+    echo
+    echo "Options:"
+    echo "  -s, --start      Start or re-attach to the MAIA session."
+    echo "  -r, --running    Check if the MAIA session is running."
+    echo "  -a, --attach     Attach to the MAIA session if it is running."
+    echo "  -k, --kill       Kill the MAIA session if it is running."
+    echo "  -h, --help       Display this help message."
+    return 0
+  else
+    echo "ERROR: Unknown command - use -h, --help for more information."
+  fi
+
+  # End function execution successfully if no errors.
+  return 0
+}

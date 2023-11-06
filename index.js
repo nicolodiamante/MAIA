@@ -1,13 +1,31 @@
-// Jabb — A Discord bot powerd by chatGPT.
+// MAIA — A friendly Discord bot powered by chatGPT.
 // By Nicolò Diamante <hello@nicolodiamante.com>
-// https://github.com/nicolodiamante/jabb
+// https://github.com/nicolodiamante/MAIA
 // MIT License
 
-// Load environment variables
+// Load environment variables.
 require('dotenv/config')
 const prompt = require('./.src/prompt')
 
-// Prepare to connect to the Discord API.
+// Validate environment variables.
+const REQUIRED_ENV_VARS = [
+  'OPENAI_ORG',
+  'OPENAI_API_KEY',
+  'DISCORD_TOKEN',
+  'CHATGPT_MODEL',
+  'CHATGPT_TEMP',
+  'CHATGPT_TOP_P',
+  'CHATGPT_MAX_TOKENS'
+]
+
+REQUIRED_ENV_VARS.forEach((envVar) => {
+  if (!process.env[envVar]) {
+    console.error(`Missing required environment variable: ${envVar}`)
+    process.exit(1)
+  }
+})
+
+// Import Discord.js library and prepare the client with necessary intents.
 const { Client, IntentsBitField } = require('discord.js')
 const client = new Client({
   intents: [
@@ -17,25 +35,25 @@ const client = new Client({
   ]
 })
 
+// Log a message to the console once the bot is ready and online.
 client.on('ready', () => {
-  console.log('Jabb is now online on Discord!')
+  console.log('MAIA is now online on Discord!')
 })
 
-// Prepare connection to OpenAI API.
+// Prepare connection to OpenAI API using configurations from env variables.
 const { Configuration, OpenAIApi } = require('openai')
 const configuration = new Configuration({
   organization: process.env.OPENAI_ORG,
   apiKey: process.env.OPENAI_API_KEY
 })
-
 const openai = new OpenAIApi(configuration)
 
-// Check for when a message on discord is sent.
+// Event listener for incoming messages on Discord.
 client.on('messageCreate', async (message) => {
-  // Don't respond to yourself or other bots
+  // Ignore messages from bots.
   if (message.author.bot) return
 
-  // Limit channel usage when `DISCORD_CHANNEL_ID` is set, else all channels.
+  // Restrict bot activity to a specific channel if DISCORD_CHANNEL_ID is set, otherwise, all channels.
   if (
     process.env.DISCORD_CHANNEL_ID &&
     message.channel.id !== process.env.DISCORD_CHANNEL_ID
@@ -43,37 +61,59 @@ client.on('messageCreate', async (message) => {
     return
   }
 
-  // Don't respond if message start with '!'
-  if (message.content.startsWith('!')) return
+  // Don't process messages starting with '!'.
+  if (message.content.startsWith('!')) {
+    return
+  }
 
-  // Access the prompt
-  const { CHATGPT_PROMPT } = prompt
-  let conversationLog = [
-    {
+  // Prepare a log for the conversation.
+  let conversationLog = []
+
+  // Include the bot prompt if operating in a specific channel.
+  if (
+    process.env.DISCORD_CHANNEL_ID &&
+    message.channel.id === process.env.DISCORD_CHANNEL_ID
+  ) {
+    // Access the prompt.
+    const { MAIA_PROMPT } = prompt
+    conversationLog.push({
       role: 'system',
-      content: CHATGPT_PROMPT
+      content: MAIA_PROMPT
+    })
+  }
+
+  // Log conversation details if CHAT_LOG is enabled.
+  if (process.env.CHAT_LOG === '1') {
+    for (const log of conversationLog) {
+      console.log(log.role, log.content)
     }
-  ]
+  }
 
   try {
+    // Fetch previous messages to build the conversation history.
     await message.channel.sendTyping()
-    let prevMessages = await message.channel.messages.fetch({ limit: 15 })
+    let prevMessages = await message.channel.messages.fetch({ limit: 20 })
     prevMessages.reverse()
 
+    const sanitizedBotUsername = client.user.username
+      .replace(/\s+/g, '_')
+      .replace(/[^\w\s]/gi, '')
+
+    // Iterate through previous messages to construct the log.
     prevMessages.forEach((msg) => {
       if (msg.content.startsWith('!')) return
-      if (msg.author.id !== client.user.id && message.author.bot) return
-      if (msg.author.id == client.user.id) {
+      if (msg.author.bot) return // Corrected the check for bot messages.
+      if (msg.author.id === client.user.id) {
+        // Push the message to the log.
         conversationLog.push({
           role: 'assistant',
           content: msg.content,
-          name: msg.author.username
-            .replace(/\s+/g, '_')
-            .replace(/[^\w\s]/gi, '')
+          name: sanitizedBotUsername
         })
       }
 
-      if (msg.author.id == message.author.id) {
+      // Determine role and sanitise username.
+      if (msg.author.id === message.author.id) {
         conversationLog.push({
           role: 'user',
           content: msg.content,
@@ -84,6 +124,7 @@ client.on('messageCreate', async (message) => {
       }
     })
 
+    // Use OpenAI to generate a response based on the conversation log.
     const result = await openai
       .createChatCompletion({
         model: process.env.CHATGPT_MODEL,
@@ -91,16 +132,19 @@ client.on('messageCreate', async (message) => {
         temperature: parseFloat(process.env.CHATGPT_TEMP),
         top_p: parseFloat(process.env.CHATGPT_TOP_P),
         max_tokens: parseInt(process.env.CHATGPT_MAX_TOKENS),
-        stop: 'Jabb:'
+        stop: 'MAIA:'
       })
       .catch((error) => {
-        console.log(`OPENAI ERR: ${error}`)
+        console.error(`OPENAI ERR: ${error}`) // logging for errors.
+        throw error // Re-throw the error to handle in the outer catch.
       })
+
+    // Send the generated response back to the channel.
     message.reply(result.data.choices[0].message)
   } catch (error) {
-    console.log(`ERR: ${error}`)
+    console.error(`ERR: ${error}`) // logging for errors.
   }
 })
 
-// Log the bot into Discord.
+// Use the bot token to log in and begin listening for events.
 client.login(process.env.DISCORD_TOKEN)
