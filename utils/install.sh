@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 #
 # Install MAIA dependencies.
@@ -11,19 +11,17 @@ ENV_VAR="${TARGET}/.env"
 # Check for Homebrew, if not found then install.
 echo 'Checking for Homebrew...'
 if ! command -v brew &> /dev/null; then
-  echo 'Brew is missing! Installing it...'
-
-  # Basic error handling.
+  echo 'Homebrew is missing! Installing it...'
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Check for Node, if not found then install.
+# Check for Node and npm, if not found then install.
 if ! command -v node &> /dev/null; then
   echo 'Node is missing! Installing it...'
   brew install node
 fi
 
-# Check for Tmux, if not found then install.
+# Check for tmux, if not found then install.
 if ! command -v tmux &> /dev/null; then
   echo 'Tmux is missing! Installing it...'
   brew install tmux
@@ -31,16 +29,16 @@ fi
 
 # Install dependencies via npm.
 if ! command -v npm &> /dev/null; then
-  echo 'npm is missing! Installing npm and dependencies...'
-  npm install && cd "${TARGET}" && npm init -y &> /dev/null && npm install
+  echo 'There was an error initializing the project with npm.'
+  exit 1
 else
   echo 'Installing dependencies via npm...'
   cd "${TARGET}" && npm init -y &> /dev/null && npm install
 fi
 
-# User Credentials.
-[[ ! -f "${ENV_VAR}" ]]; then
-cat << EOF > "${ENV_VAR}"
+# Create User Credentials if not present.
+if [ ! -f "${ENV_VAR}" ]; then
+  cat << EOF > "${ENV_VAR}"
 #
 # Configuration for MAIA - Discord Chatbot.
 #
@@ -62,6 +60,7 @@ CHATGPT_MAX_TOKENS=512            # Limits response length
 # Chat Log Configuration
 CHAT_LOG=0                        # Set to 1 to enable chat logging
 EOF
+  echo 'MAIA: .env file created.'
 else
   echo 'MAIA: .env file already exists.'
 fi
