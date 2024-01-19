@@ -5,15 +5,15 @@
 #
 
 # Defines the PATHs.
-TARGET="${HOME}/MAIA"
+TARGET="${0:h}"
 ENV_VAR="${TARGET}/.env"
 
 # Ask for user confirmation before proceeding.
-echo "This will uninstall MAIA dependencies, Node, npm, and Tmux if confirmed."
+echo "This will uninstall MAIA dependencies: Node, npm, and Tmux."
 read -q "REPLY?Are you sure you want to proceed? [y/N] "
 echo ""
 if [[ ! "$REPLY" =~ ^[Yy]$ ]]; then
-  echo "Uninstallation aborted."
+  echo "Uninstall aborted by the user."
   exit 0
 fi
 
@@ -23,26 +23,26 @@ if [[ -f "${ENV_VAR}" ]]; then
   echo ""
   if [[ "$REPLY" =~ ^[Yy]$ ]]; then
     rm -v "${ENV_VAR}"
-    echo "Deleted the .env file."
+    echo "MAIA: .env file deleted."
   else
-    echo "The .env file was not deleted."
+    echo "MAIA: Keeping .env file."
   fi
 fi
 
-# Uninstall npm packages.
+# Remove npm packages.
 if [[ -d "${TARGET}/node_modules" ]]; then
-  echo "Uninstalling npm dependencies..."
+  echo "\nNavigating to the project directory: ${TARGET}"
   if ! cd "${TARGET}"; then
-    echo "Failed to navigate to ${TARGET}. Uninstallation aborted." >&2
+    echo "Failed to navigate to ${TARGET}" >&2
     exit 1
   fi
 
-  echo "Attempting to uninstall all npm dependencies in the project..."
+  echo "Attempting to remove all npm dependencies in the project..."
   if ! npm uninstall $(npm list --parseable --depth=0 | awk -F/ '{print $NF}' | tr '\n' ' '); then
-    echo "Failed to uninstall npm dependencies." >&2
+    echo "Failed to remove npm dependencies." >&2
     exit 1
   else
-    echo "Npm dependencies successfully uninstalled."
+    echo "Npm dependencies successfully removed."
   fi
 fi
 
@@ -52,27 +52,27 @@ echo ""
 if [[ "$REPLY" =~ ^[Yy]$ ]]; then
   # Uninstall Node and npm.
   if command -v node &>/dev/null; then
-    echo 'Uninstalling Node and npm...'
+    echo "Uninstall Node..."
     if ! brew uninstall node; then
       echo "Failed to uninstall Node." >&2
       exit 1
     else
-      echo "Node and npm uninstalled successfully."
+      echo "Node uninstall complete."
     fi
   fi
 
   # Uninstall tmux.
   if command -v tmux &>/dev/null; then
-    echo 'Uninstalling Tmux...'
+    echo "Uninstall Tmux..."
     if ! brew uninstall tmux; then
-      echo "Failed to uninstall Tmux." >&2
+      echo "Failed to remove Tmux." >&2
       exit 1
     else
-      echo "Tmux uninstalled successfully."
+      echo "Tmux uninstall complete."
     fi
   fi
 else
   echo "Node, npm, and Tmux remain installed."
 fi
 
-echo "Uninstallation complete."
+echo "\nMAIA: Uninstall complete."

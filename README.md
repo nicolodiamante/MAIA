@@ -126,13 +126,13 @@ After acquiring the [API Key][openai-API], integrating ChatGPT's services into D
 
 Now you've created the application and gathered all the necessary keys to operate the bot. You need to download the repository. Here are the two methods you can choose from:
 
-**Automatic Download via `curl`**: Simply execute the following command in your terminal to quickly download and seamlessly install the utility:
+**Automatic Download via `curl`:** Simply execute the following command in your terminal to quickly download and seamlessly install the utility:
 
 ```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/nicolodiamante/MAIA/HEAD/bootstrap.sh)"
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/nicolodiamante/MAIA/HEAD/bootstrap.zsh)"
 ```
 
-**Manual Cloning**: For those who prefer a hands-on approach, you can manually clone the repository to your desired location:
+**Manual Cloning:** For those who prefer a hands-on approach, you can manually clone the repository to your desired location:
 
 ```shell
 git clone https://github.com/nicolodiamante/MAIA.git ~/MAIA
@@ -142,13 +142,13 @@ git clone https://github.com/nicolodiamante/MAIA.git ~/MAIA
 
 ### Post-Download Steps
 
-**Directory Navigation & Script Execution**: Navigate to the repository's `utils` directory and execute the installation script:
+**Directory Navigation & Script Execution:** Navigate to the root directory of the repository, and then execute the installation script using the following command:
 
 ```shell
-source install.sh
+source utils/install.sh
 ```
 
-**MAIA Configuration**:
+**MAIA Configuration:**
 
 Before initiating the script, confirm that your system has Node.js installed. If the script doesn't detect Node.js, it will attempt to install it via [Homebrew][Homebrew]. In the absence of Homebrew, the script will install Homebrew first and then proceed with the [Node.js][nodejs] installation, followed by [tmux][tmux-github].
 
@@ -361,9 +361,9 @@ Thank you for considering the use of this chatbot. Your feedback on improving MA
 </p>
 
 <p align="center">
-  <picture>
-    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/4c20aa4f-77ea-46ca-a629-9a9b67b055e8" draggable="false" ondragstart="return false;" alt="Nicol&#242; Diamante" title="Nicol&#242; Diamante" width="17px" />
-  </picture>
+  <a href="https://nicolodiamante.com" target="_blank">
+    <img src="https://github.com/nicolodiamante/MAIA/assets/48920263/4c20aa4f-77ea-46ca-a629-9a9b67b055e8" draggable="false" ondragstart="return false;" alt="Nicol&#242; Diamante Portfolio" title="Nicol&#242; Diamante" width="17px" />
+  </a>
 </p>
 
 <p align="center">
