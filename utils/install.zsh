@@ -75,10 +75,10 @@ OPENAI_ORG=                         # OpenAI organization ID
 OPENAI_API_KEY=                     # API key for OpenAI
 
 # ChatGPT Configuration
-CHATGPT_MODEL=gpt-4-1106-preview    # Model to use for responses
+CHATGPT_MODEL=gpt-4o                # Model to use for responses
 CHATGPT_TEMP=0.86                   # Controls response randomness
 CHATGPT_TOP_P=1                     # Controls response diversity
-CHATGPT_MAX_TOKENS=512              # Limits response length
+CHATGPT_MAX_TOKENS=768              # Limits response length
 
 # Chat Log Configuration
 CHAT_LOG=0                          # Set to 1 to enable chat logging
